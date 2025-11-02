@@ -190,6 +190,36 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Newsletter Section */}
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 border-y border-accent/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 animate-fade-in">
+            <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">
+              <Mail className="w-12 h-12 text-accent" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t.newsletterTitle}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">{t.newsletterSubtext}</p>
+          </div>
+
+          <div className="mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              {t.newsletterBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="flex-shrink-0">
+                    <Check className="w-5 h-5 text-accent" />
+                  </div>
+                  <span className="text-foreground">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Card className="p-6 sm:p-8 lg:p-10 bg-card shadow-medium">
+            <NewsletterForm />
+          </Card>
+        </div>
+      </section>
+
       {/* Categories Section */}
       <section className="py-16 sm:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -219,36 +249,6 @@ const Index = () => {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 border-y border-accent/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
-            <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">
-              <Mail className="w-12 h-12 text-accent" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t.newsletterTitle}</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">{t.newsletterSubtext}</p>
-          </div>
-
-          <div className="mb-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              {t.newsletterBenefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <div className="flex-shrink-0">
-                    <Check className="w-5 h-5 text-accent" />
-                  </div>
-                  <span className="text-foreground">{benefit}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <Card className="p-6 sm:p-8 lg:p-10 bg-card shadow-medium">
-            <NewsletterForm />
-          </Card>
         </div>
       </section>
 

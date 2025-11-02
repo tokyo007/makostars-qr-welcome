@@ -223,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 sm:py-24 bg-secondary/50">
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 border-y border-accent/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in">
             <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">

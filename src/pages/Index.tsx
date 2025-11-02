@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages } from "lucide-react";
+import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
 
 const Index = () => {
@@ -19,6 +19,14 @@ const Index = () => {
         "MakoStars is an education brand dedicated to supporting bilingual learning, creativity, and global curiosity. We partner with BumbleB English and host book fairs to bring quality educational materials to families across Japan. Our community of learners spans from early readers to ambitious students preparing for international exams.",
       learnMore: "Learn more at makostars.com",
       categoriesTitle: "Shop by Category",
+      newsletterTitle: "Stay Connected with MakoStars",
+      newsletterSubtext: "Join our newsletter to receive exclusive updates on new products, educational resources, and inspiring articles for your learning journey.",
+      newsletterBenefits: [
+        "Early access to new book arrivals",
+        "Educational tips and resources",
+        "Exclusive promotions and offers",
+        "Inspiring articles for families"
+      ],
       specialTitle: "Thank You!",
       specialText:
         "Enjoy your free bookmark! It's our way of saying thank you for supporting learning and imagination.",
@@ -67,6 +75,14 @@ const Index = () => {
         "MakoStarsは、バイリンガル学習、創造性、グローバルな好奇心をサポートする教育ブランドです。BumbleB Englishと提携し、ブックフェアを開催して、日本全国のご家族に質の高い教材をお届けしています。私たちの学習コミュニティは、初めての読者から国際試験を目指す意欲的な生徒まで幅広く広がっています。",
       learnMore: "詳細はmakostars.comへ",
       categoriesTitle: "カテゴリー別に探す",
+      newsletterTitle: "MakoStarsと繋がろう",
+      newsletterSubtext: "ニュースレターに登録して、新商品、教育リソース、学習に役立つ記事などの最新情報を受け取りましょう。",
+      newsletterBenefits: [
+        "新着書籍の先行案内",
+        "教育のヒントとリソース",
+        "限定プロモーションとオファー",
+        "ご家族向けのインスピレーション記事"
+      ],
       specialTitle: "ありがとうございます！",
       specialText: "無料のしおりをお楽しみください！学びと想像力をサポートしていただいた感謝の気持ちです。",
       socialText: "しおりと一緒に読書している様子を、Instagram @MakoStarsでタグ付けしてください！",
@@ -202,6 +218,42 @@ const Index = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 sm:py-24 bg-secondary/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 animate-fade-in">
+            <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">
+              <Mail className="w-12 h-12 text-accent" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t.newsletterTitle}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">{t.newsletterSubtext}</p>
+          </div>
+
+          <div className="mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              {t.newsletterBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="flex-shrink-0">
+                    <Check className="w-5 h-5 text-accent" />
+                  </div>
+                  <span className="text-foreground">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Card className="p-4 sm:p-6 bg-card shadow-medium">
+            <div className="w-full overflow-hidden rounded-lg">
+              <iframe
+                src="https://crm.zoho.jp/crm/WebFormServeServlet?rid=2042b7c904e8485145fd8eb435f996223de83b8ffabb893da41fce8d685f37882132fa697ef299ec78784af9973f9199gidb8691b35d3e2b5e26e5fb34d7f0585ff2a74569549fa5a0ff1cb6302164a9f88"
+                title="Newsletter Signup Form"
+                className="w-full h-[500px] sm:h-[550px] border-0"
+              />
+            </div>
+          </Card>
         </div>
       </section>
 

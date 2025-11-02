@@ -136,13 +136,13 @@ const Index = () => {
       </section>
 
       {/* Special Message Section */}
-      <section className="py-16 sm:py-24 bg-primary text-white">
+      <section className="py-16 sm:py-24 bg-secondary/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">
             <BookOpen className="w-12 h-12 text-accent" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">{t.specialTitle}</h2>
-          <p className="text-xl mb-4 text-white/95">{t.specialText}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">{t.specialTitle}</h2>
+          <p className="text-xl mb-4 text-muted-foreground">{t.specialText}</p>
         </div>
       </section>
 

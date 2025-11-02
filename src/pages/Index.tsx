@@ -148,7 +148,7 @@ const Index = () => {
                 size="lg"
                 variant="outline"
                 className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 font-semibold text-lg px-8 py-6 transition-all hover:scale-105"
-                onClick={() => window.open("https://makostars.com", "_blank")}
+                onClick={() => window.open("https://makostars.com/all-articles/", "_blank")}
               >
                 {t.exploreMore}
               </Button>

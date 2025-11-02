@@ -1,9 +1,8 @@
 {
-  "version": 2,
-  "builds": [{ "src": "dist/**/*", "use": "@vercel/static" }],
-  "routes": [
-    { "src": "^/(bookmark|book-fair-2025)(/.*)?$", "dest": "/index.html" },
-    { "src": "^/$", "dest": "/index.html" },
-    { "src": "^(?!/assets/).*$", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/bookmark", "destination": "/index.html" },
+    { "source": "/book-fair-2025", "destination": "/index.html" },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

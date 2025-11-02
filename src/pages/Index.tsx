@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check, Instagram } from "lucide-react";
+import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check, Instagram, Facebook, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import confetti from "canvas-confetti";
@@ -279,11 +279,105 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-secondary border-t border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-muted-foreground">
-            © 2024 MakoStars. {language === "en" ? "All rights reserved." : "無断転載禁止。"}
-          </p>
+      <footer className="bg-[#1a2847] pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {/* About Us Column */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-4">About Us</h3>
+              <p className="text-white font-semibold mb-2 text-sm">MakoStars LLC: Learn English for School | Work | Life</p>
+              <p className="text-gray-300 text-sm mb-4">Providing quality English learning resources and books for children in Japan.</p>
+              <div className="flex gap-4 mt-4">
+                <a href="https://facebook.com/makostars" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <Facebook className="w-6 h-6 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer" />
+                </a>
+                <a href="https://instagram.com/MakoStars" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Instagram className="w-6 h-6 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer" />
+                </a>
+                <a href="mailto:info@makostars.com" aria-label="Email">
+                  <Mail className="w-6 h-6 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer" />
+                </a>
+                <a href="https://line.me/ti/p/makostars" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+                  <MessageCircle className="w-6 h-6 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer" />
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links Column */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
+              <nav className="flex flex-col gap-2">
+                <a href="https://makostars.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Home
+                </a>
+                <a href="https://makostars.com/about/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  About Us
+                </a>
+                <a href="https://bumblebenglish.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  BumbleB English School
+                </a>
+                <a href="https://makostars.com/frequently-asked-questions/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  FAQs
+                </a>
+                <a href="https://makostars.com/contact/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Contact Us
+                </a>
+              </nav>
+            </div>
+
+            {/* Legal Column */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-4">Legal</h3>
+              <nav className="flex flex-col gap-2">
+                <a href="https://makostars.com/act-on-specified-commercial-transactions/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Act on Specified Commercial Transactions
+                </a>
+                <a href="https://makostars.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Privacy Policy
+                </a>
+                <a href="https://makostars.com/refund_returns/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Return Policy
+                </a>
+                <a href="https://makostars.com/shipping-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Shipping Policy
+                </a>
+                <a href="https://makostars.com/terms-conditions/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Terms and Conditions
+                </a>
+                <a href="https://makostars.com/disclaimer/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Disclaimer
+                </a>
+              </nav>
+            </div>
+
+            {/* Store Column */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-4">Store</h3>
+              <nav className="flex flex-col gap-2">
+                <a href="https://store.makostars.com/collections/all" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Shop All
+                </a>
+                <a href="https://store.makostars.com/collections/brain-quest-workbooks" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Brain Quest Workbooks
+                </a>
+                <a href="https://store.makostars.com/collections/dr-seuss-books" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Dr. Seuss Books
+                </a>
+                <a href="https://store.makostars.com/collections/roald-dahl-books" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Roald Dahl Books
+                </a>
+                <a href="https://store.makostars.com/collections/scholastic-success-workbooks" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  Scholastic Success Workbooks
+                </a>
+              </nav>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-8 border-t border-gray-700 gap-4">
+            <p className="text-gray-400 text-sm">MakoStars LLC. Learn English for School | Work | Life</p>
+            <p className="text-gray-400 text-sm">Copyright © 2025 All rights reserved. MakoStars LLC.</p>
+          </div>
         </div>
       </footer>
     </div>;

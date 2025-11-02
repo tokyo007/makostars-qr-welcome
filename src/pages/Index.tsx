@@ -151,7 +151,7 @@ const Index = () => {
           <div className="text-center animate-fade-in">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">{t.aboutTitle}</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{t.aboutText}</p>
-            <a href="https://makostars.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-accent hover:text-accent-dark font-semibold text-lg transition-colors">
+            <a href="https://makostars.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-black hover:text-black/80 font-bold text-lg transition-colors">
               {t.learnMore}
               <span className="ml-2">→</span>
             </a>

@@ -4,136 +4,97 @@ import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check, Instagram } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
 import { NewsletterForm } from "@/components/NewsletterForm";
-
 const Index = () => {
   const [language, setLanguage] = useState<"en" | "ja">("en");
-
   const content = {
     en: {
       heroTitle: "Welcome to MakoStars – Inspiring Learning, One Book at a Time!",
-      heroSubtext:
-        "Thank you for visiting! Discover fun, engaging English books and learning tools loved by families across Japan.",
+      heroSubtext: "Thank you for visiting! Discover fun, engaging English books and learning tools loved by families across Japan.",
       shopNow: "Shop Now",
       exploreMore: "Explore our Articles",
       aboutTitle: "About MakoStars",
-      aboutText:
-        "MakoStars is an education brand dedicated to supporting bilingual learning, creativity, and global curiosity. We partner with BumbleB English and host book fairs to bring quality educational materials to families across Japan. Our community of learners spans from early readers to ambitious students preparing for international exams.",
+      aboutText: "MakoStars is an education brand dedicated to supporting bilingual learning, creativity, and global curiosity. We partner with BumbleB English and host book fairs to bring quality educational materials to families across Japan. Our community of learners spans from early readers to ambitious students preparing for international exams.",
       learnMore: "Learn more at makostars.com",
       categoriesTitle: "Shop by Category",
       newsletterTitle: "Stay Connected with MakoStars",
       newsletterSubtext: "Join our newsletter to receive exclusive updates on new products, educational resources, and inspiring articles for your learning journey.",
-      newsletterBenefits: [
-        "Early access to new book arrivals",
-        "Educational tips and resources",
-        "Exclusive promotions and offers",
-        "Inspiring articles for families"
-      ],
+      newsletterBenefits: ["Early access to new book arrivals", "Educational tips and resources", "Exclusive promotions and offers", "Inspiring articles for families"],
       specialTitle: "Thank You!",
-      specialText:
-        "Enjoy your free bookmark! It's our way of saying thank you for supporting learning and imagination.",
+      specialText: "Enjoy your free bookmark! It's our way of saying thank you for supporting learning and imagination.",
       socialText: "Follow us on Instagram @MakoStars",
-      categories: [
-        {
-          title: "Brain Quest & Workbooks",
-          description: "Fun learning for elementary & middle school students",
-          icon: Brain,
-        },
-        {
-          title: "Scholastic 'Success With…' Series",
-          description: "Build reading, writing, and math skills",
-          icon: BookOpen,
-        },
-        {
-          title: "Roald Dahl Storybooks",
-          description: "Classic tales for developing imagination",
-          icon: Sparkles,
-        },
-        {
-          title: "Dr. Seuss Books",
-          description: "Early reading fun with rhyme and rhythm",
-          icon: Globe,
-        },
-        {
-          title: "Exam Prep Books",
-          description: "AP, TOEFL, EIKEN, IELTS for ambitious learners",
-          icon: GraduationCap,
-        },
-        {
-          title: "National Geographic Kids",
-          description: "Great for curious kids",
-          icon: Telescope,
-        },
-      ],
+      categories: [{
+        title: "Brain Quest & Workbooks",
+        description: "Fun learning for elementary & middle school students",
+        icon: Brain
+      }, {
+        title: "Scholastic 'Success With…' Series",
+        description: "Build reading, writing, and math skills",
+        icon: BookOpen
+      }, {
+        title: "Roald Dahl Storybooks",
+        description: "Classic tales for developing imagination",
+        icon: Sparkles
+      }, {
+        title: "Dr. Seuss Books",
+        description: "Early reading fun with rhyme and rhythm",
+        icon: Globe
+      }, {
+        title: "Exam Prep Books",
+        description: "AP, TOEFL, EIKEN, IELTS for ambitious learners",
+        icon: GraduationCap
+      }, {
+        title: "National Geographic Kids",
+        description: "Great for curious kids",
+        icon: Telescope
+      }]
     },
     ja: {
       heroTitle: "MakoStarsへようこそ - 一冊ずつ、学びをインスパイア！",
-      heroSubtext:
-        "ご訪問ありがとうございます！日本全国のご家族に愛されている、楽しく魅力的な英語の本と学習ツールをご覧ください。",
+      heroSubtext: "ご訪問ありがとうございます！日本全国のご家族に愛されている、楽しく魅力的な英語の本と学習ツールをご覧ください。",
       shopNow: "ショップを見る",
       exploreMore: "記事を見る",
       aboutTitle: "MakoStarsについて",
-      aboutText:
-        "MakoStarsは、バイリンガル学習、創造性、グローバルな好奇心をサポートする教育ブランドです。BumbleB Englishと提携し、ブックフェアを開催して、日本全国のご家族に質の高い教材をお届けしています。私たちの学習コミュニティは、初めての読者から国際試験を目指す意欲的な生徒まで幅広く広がっています。",
+      aboutText: "MakoStarsは、バイリンガル学習、創造性、グローバルな好奇心をサポートする教育ブランドです。BumbleB Englishと提携し、ブックフェアを開催して、日本全国のご家族に質の高い教材をお届けしています。私たちの学習コミュニティは、初めての読者から国際試験を目指す意欲的な生徒まで幅広く広がっています。",
       learnMore: "詳細はmakostars.comへ",
       categoriesTitle: "カテゴリー別に探す",
       newsletterTitle: "MakoStarsと繋がろう",
       newsletterSubtext: "ニュースレターに登録して、新商品、教育リソース、学習に役立つ記事などの最新情報を受け取りましょう。",
-      newsletterBenefits: [
-        "新着書籍の先行案内",
-        "教育のヒントとリソース",
-        "限定プロモーションとオファー",
-        "ご家族向けのインスピレーション記事"
-      ],
+      newsletterBenefits: ["新着書籍の先行案内", "教育のヒントとリソース", "限定プロモーションとオファー", "ご家族向けのインスピレーション記事"],
       specialTitle: "ありがとうございます！",
       specialText: "無料のしおりをお楽しみください！学びと想像力をサポートしていただいた感謝の気持ちです。",
       socialText: "Instagram @MakoStars をフォローしてください",
-      categories: [
-        {
-          title: "Brain Quest & ワークブック",
-          description: "小学生・中学生向けの楽しい学習教材",
-          icon: Brain,
-        },
-        {
-          title: "Scholastic「Success With…」シリーズ",
-          description: "読み書きと算数スキルを育てる",
-          icon: BookOpen,
-        },
-        {
-          title: "ロアルド・ダール ストーリーブック",
-          description: "想像力を育む名作",
-          icon: Sparkles,
-        },
-        {
-          title: "Dr. Seussの本",
-          description: "韻とリズムで楽しく初めての読書",
-          icon: Globe,
-        },
-        {
-          title: "試験対策本",
-          description: "AP、TOEFL、英検、IELTS対策",
-          icon: GraduationCap,
-        },
-        {
-          title: "ナショナルジオグラフィック キッズ",
-          description: "好奇心旺盛なお子様に最適",
-          icon: Telescope,
-        },
-      ],
-    },
+      categories: [{
+        title: "Brain Quest & ワークブック",
+        description: "小学生・中学生向けの楽しい学習教材",
+        icon: Brain
+      }, {
+        title: "Scholastic「Success With…」シリーズ",
+        description: "読み書きと算数スキルを育てる",
+        icon: BookOpen
+      }, {
+        title: "ロアルド・ダール ストーリーブック",
+        description: "想像力を育む名作",
+        icon: Sparkles
+      }, {
+        title: "Dr. Seussの本",
+        description: "韻とリズムで楽しく初めての読書",
+        icon: Globe
+      }, {
+        title: "試験対策本",
+        description: "AP、TOEFL、英検、IELTS対策",
+        icon: GraduationCap
+      }, {
+        title: "ナショナルジオグラフィック キッズ",
+        description: "好奇心旺盛なお子様に最適",
+        icon: Telescope
+      }]
+    }
   };
-
   const t = content[language];
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Language Toggle */}
       <div className="fixed top-4 right-4 z-50">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setLanguage(language === "en" ? "ja" : "en")}
-          className="bg-background/95 backdrop-blur-sm shadow-soft border-border hover:bg-accent hover:text-accent-foreground transition-all"
-        >
+        <Button variant="outline" size="sm" onClick={() => setLanguage(language === "en" ? "ja" : "en")} className="bg-background/95 backdrop-blur-sm shadow-soft border-border hover:bg-accent hover:text-accent-foreground transition-all">
           <Languages className="w-4 h-4 mr-2" />
           {language === "en" ? "日本語" : "English"}
         </Button>
@@ -151,19 +112,10 @@ const Index = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">{t.heroTitle}</h1>
             <p className="text-lg sm:text-xl mb-8 text-white/95 leading-relaxed">{t.heroSubtext}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-accent hover:bg-accent-dark text-accent-foreground font-semibold text-lg px-8 py-6 shadow-medium transition-all hover:scale-105"
-                onClick={() => window.open("https://store.makostars.com", "_blank")}
-              >
+              <Button size="lg" className="bg-accent hover:bg-accent-dark text-accent-foreground font-semibold text-lg px-8 py-6 shadow-medium transition-all hover:scale-105" onClick={() => window.open("https://store.makostars.com", "_blank")}>
                 {t.shopNow}
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 font-semibold text-lg px-8 py-6 transition-all hover:scale-105"
-                onClick={() => window.open("https://makostars.com/all-articles/", "_blank")}
-              >
+              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 font-semibold text-lg px-8 py-6 transition-all hover:scale-105" onClick={() => window.open("https://makostars.com/all-articles/", "_blank")}>
                 {t.exploreMore}
               </Button>
             </div>
@@ -177,12 +129,7 @@ const Index = () => {
           <div className="text-center animate-fade-in">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">{t.aboutTitle}</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{t.aboutText}</p>
-            <a
-              href="https://makostars.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-accent hover:text-accent-dark font-semibold text-lg transition-colors"
-            >
+            <a href="https://makostars.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-accent hover:text-accent-dark font-semibold text-lg transition-colors">
               {t.learnMore}
               <span className="ml-2">→</span>
             </a>
@@ -203,14 +150,12 @@ const Index = () => {
 
           <div className="mb-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              {t.newsletterBenefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
+              {t.newsletterBenefits.map((benefit, index) => <div key={index} className="flex items-center space-x-3">
                   <div className="flex-shrink-0">
                     <Check className="w-5 h-5 text-accent" />
                   </div>
                   <span className="text-foreground">{benefit}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
@@ -227,13 +172,8 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.categories.map((category, index) => {
-              const Icon = category.icon;
-              return (
-                <Card
-                  key={index}
-                  className="p-6 hover:shadow-medium transition-all duration-300 hover:scale-105 cursor-pointer bg-gradient-card border-border"
-                  onClick={() => window.open("https://store.makostars.com", "_blank")}
-                >
+            const Icon = category.icon;
+            return <Card key={index} className="p-6 hover:shadow-medium transition-all duration-300 hover:scale-105 cursor-pointer bg-gradient-card border-border" onClick={() => window.open("https://store.makostars.com", "_blank")}>
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -245,9 +185,8 @@ const Index = () => {
                       <p className="text-muted-foreground text-sm leading-relaxed">{category.description}</p>
                     </div>
                   </div>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </div>
       </section>
@@ -266,14 +205,9 @@ const Index = () => {
       {/* Social Section */}
       <section className="py-12 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-3 text-xl">
+          <div className="flex items-center justify-center gap-4 text-xl">
             <Instagram className="w-6 h-6 text-primary" />
-            <a 
-              href="https://instagram.com/MakoStars" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
+            <a href="https://instagram.com/MakoStars" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors font-medium">
               {t.socialText}
             </a>
           </div>
@@ -288,8 +222,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

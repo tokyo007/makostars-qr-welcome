@@ -1,11 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check, Instagram } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import confetti from "canvas-confetti";
 const Index = () => {
   const [language, setLanguage] = useState<"en" | "ja">("en");
+  const specialSectionRef = useRef<HTMLDivElement>(null);
+  const hasPlayedConfetti = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasPlayedConfetti.current) {
+            hasPlayedConfetti.current = true;
+            
+            // Fire confetti animation
+            const duration = 2000;
+            const end = Date.now() + duration;
+
+            const frame = () => {
+              confetti({
+                particleCount: 3,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#FFD700', '#FFA500', '#FF69B4', '#87CEEB']
+              });
+              confetti({
+                particleCount: 3,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#FFD700', '#FFA500', '#FF69B4', '#87CEEB']
+              });
+
+              if (Date.now() < end) {
+                requestAnimationFrame(frame);
+              }
+            };
+
+            frame();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (specialSectionRef.current) {
+      observer.observe(specialSectionRef.current);
+    }
+
+    return () => {
+      if (specialSectionRef.current) {
+        observer.unobserve(specialSectionRef.current);
+      }
+    };
+  }, []);
   const content = {
     en: {
       heroTitle: "Welcome to MakoStars – Inspiring Learning, One Book at a Time!",
@@ -136,7 +189,7 @@ const Index = () => {
       </section>
 
       {/* Special Message Section */}
-      <section className="py-16 sm:py-24 bg-secondary/50">
+      <section ref={specialSectionRef} className="py-16 sm:py-24 bg-secondary/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">
             <BookOpen className="w-12 h-12 text-accent" />

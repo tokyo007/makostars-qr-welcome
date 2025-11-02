@@ -146,7 +146,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-secondary">
+      <section className="py-16 sm:py-24 bg-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">{t.aboutTitle}</h2>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check } from "lucide-react";
+import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check, Instagram } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
@@ -31,7 +31,7 @@ const Index = () => {
       specialTitle: "Thank You!",
       specialText:
         "Enjoy your free bookmark! It's our way of saying thank you for supporting learning and imagination.",
-      socialText: "Tag us on Instagram @MakoStars if you're reading with your bookmark!",
+      socialText: "Follow us on Instagram @MakoStars",
       categories: [
         {
           title: "Brain Quest & Workbooks",
@@ -86,7 +86,7 @@ const Index = () => {
       ],
       specialTitle: "ありがとうございます！",
       specialText: "無料のしおりをお楽しみください！学びと想像力をサポートしていただいた感謝の気持ちです。",
-      socialText: "しおりと一緒に読書している様子を、Instagram @MakoStarsでタグ付けしてください！",
+      socialText: "Instagram @MakoStars をフォローしてください",
       categories: [
         {
           title: "Brain Quest & ワークブック",
@@ -260,7 +260,23 @@ const Index = () => {
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">{t.specialTitle}</h2>
           <p className="text-xl mb-4 text-white/95">{t.specialText}</p>
-          <p className="text-lg text-white/90">{t.socialText}</p>
+        </div>
+      </section>
+
+      {/* Social Section */}
+      <section className="py-12 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-3 text-xl">
+            <Instagram className="w-6 h-6 text-primary" />
+            <a 
+              href="https://instagram.com/MakoStars" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              {t.socialText}
+            </a>
+          </div>
         </div>
       </section>
 

@@ -267,9 +267,9 @@ const Index = () => {
       </section>
 
       {/* Social Section */}
-      <section className="py-12 bg-background">
+      <section className="pt-6 pb-12 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-8 text-xl">
+          <div className="flex items-center justify-center gap-8 text-2xl">
             <Instagram className="w-6 h-6 text-primary" />
             <a href="https://instagram.com/MakoStars" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors font-medium">
               {t.socialText}

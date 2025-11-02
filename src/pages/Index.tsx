@@ -10,15 +10,18 @@ const Index = () => {
   const content = {
     en: {
       heroTitle: "Welcome to MakoStars – Inspiring Learning, One Book at a Time!",
-      heroSubtext: "Thank you for visiting! Discover fun, engaging English books and learning tools loved by families across Japan.",
+      heroSubtext:
+        "Thank you for visiting! Discover fun, engaging English books and learning tools loved by families across Japan.",
       shopNow: "Shop Now",
       exploreMore: "Explore our Articles",
       aboutTitle: "About MakoStars",
-      aboutText: "MakoStars is an education brand dedicated to supporting bilingual learning, creativity, and global curiosity. We partner with BumbleB English and host book fairs to bring quality educational materials to families across Japan. Our community of learners spans from early readers to ambitious students preparing for international exams.",
+      aboutText:
+        "MakoStars is an education brand dedicated to supporting bilingual learning, creativity, and global curiosity. We partner with BumbleB English and host book fairs to bring quality educational materials to families across Japan. Our community of learners spans from early readers to ambitious students preparing for international exams.",
       learnMore: "Learn more at makostars.com",
       categoriesTitle: "Shop by Category",
       specialTitle: "Thank You!",
-      specialText: "Enjoy your free bookmark! It's our way of saying thank you for supporting learning and imagination.",
+      specialText:
+        "Enjoy your free bookmark! It's our way of saying thank you for supporting learning and imagination.",
       socialText: "Tag us on Instagram @MakoStars if you're reading with your bookmark!",
       categories: [
         {
@@ -55,11 +58,13 @@ const Index = () => {
     },
     ja: {
       heroTitle: "MakoStarsへようこそ - 一冊ずつ、学びをインスパイア！",
-      heroSubtext: "ご訪問ありがとうございます！日本全国のご家族に愛されている、楽しく魅力的な英語の本と学習ツールをご覧ください。",
+      heroSubtext:
+        "ご訪問ありがとうございます！日本全国のご家族に愛されている、楽しく魅力的な英語の本と学習ツールをご覧ください。",
       shopNow: "ショップを見る",
       exploreMore: "記事を見る",
       aboutTitle: "MakoStarsについて",
-      aboutText: "MakoStarsは、バイリンガル学習、創造性、グローバルな好奇心をサポートする教育ブランドです。BumbleB Englishと提携し、ブックフェアを開催して、日本全国のご家族に質の高い教材をお届けしています。私たちの学習コミュニティは、初めての読者から国際試験を目指す意欲的な生徒まで幅広く広がっています。",
+      aboutText:
+        "MakoStarsは、バイリンガル学習、創造性、グローバルな好奇心をサポートする教育ブランドです。BumbleB Englishと提携し、ブックフェアを開催して、日本全国のご家族に質の高い教材をお届けしています。私たちの学習コミュニティは、初めての読者から国際試験を目指す意欲的な生徒まで幅広く広がっています。",
       learnMore: "詳細はmakostars.comへ",
       categoriesTitle: "カテゴリー別に探す",
       specialTitle: "ありがとうございます！",
@@ -120,22 +125,14 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Children reading books"
-            className="w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="Children reading books" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
         </div>
-        
+
         <div className="relative h-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="max-w-2xl text-white animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {t.heroTitle}
-            </h1>
-            <p className="text-lg sm:text-xl mb-8 text-white/95 leading-relaxed">
-              {t.heroSubtext}
-            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">{t.heroTitle}</h1>
+            <p className="text-lg sm:text-xl mb-8 text-white/95 leading-relaxed">{t.heroSubtext}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
@@ -161,12 +158,8 @@ const Index = () => {
       <section className="py-16 sm:py-24 bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              {t.aboutTitle}
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              {t.aboutText}
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">{t.aboutTitle}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">{t.aboutText}</p>
             <a
               href="https://makostars.com"
               target="_blank"
@@ -183,10 +176,8 @@ const Index = () => {
       {/* Categories Section */}
       <section className="py-16 sm:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
-            {t.categoriesTitle}
-          </h2>
-          
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">{t.categoriesTitle}</h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.categories.map((category, index) => {
               const Icon = category.icon;
@@ -203,12 +194,8 @@ const Index = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg text-foreground mb-2">
-                        {category.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {category.description}
-                      </p>
+                      <h3 className="font-semibold text-lg text-foreground mb-2">{category.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{category.description}</p>
                     </div>
                   </div>
                 </Card>
@@ -224,15 +211,9 @@ const Index = () => {
           <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">
             <BookOpen className="w-12 h-12 text-accent" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            {t.specialTitle}
-          </h2>
-          <p className="text-xl mb-4 text-white/95">
-            {t.specialText}
-          </p>
-          <p className="text-lg text-white/90">
-            {t.socialText}
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">{t.specialTitle}</h2>
+          <p className="text-xl mb-4 text-white/95">{t.specialText}</p>
+          <p className="text-lg text-white/90">{t.socialText}</p>
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, Sparkles, Globe, GraduationCap, Telescope, Languages, Mail, Check } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 const Index = () => {
   const [language, setLanguage] = useState<"en" | "ja">("en");
@@ -245,14 +246,8 @@ const Index = () => {
             </div>
           </div>
 
-          <Card className="p-4 sm:p-6 bg-card shadow-medium">
-            <div className="w-full overflow-hidden rounded-lg">
-              <iframe
-                src="https://crm.zoho.jp/crm/WebFormServeServlet?rid=2042b7c904e8485145fd8eb435f996223de83b8ffabb893da41fce8d685f37882132fa697ef299ec78784af9973f9199gidb8691b35d3e2b5e26e5fb34d7f0585ff2a74569549fa5a0ff1cb6302164a9f88"
-                title="Newsletter Signup Form"
-                className="w-full h-[500px] sm:h-[550px] border-0"
-              />
-            </div>
+          <Card className="p-6 sm:p-8 lg:p-10 bg-card shadow-medium">
+            <NewsletterForm />
           </Card>
         </div>
       </section>

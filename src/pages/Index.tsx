@@ -25,27 +25,33 @@ const Index = () => {
       categories: [{
         title: "Brain Quest & Workbooks",
         description: "Fun learning for elementary & middle school students",
-        icon: Brain
+        icon: Brain,
+        url: "https://store.makostars.com/collections/brain-quest-workbooks"
       }, {
         title: "Scholastic 'Success With…' Series",
         description: "Build reading, writing, and math skills",
-        icon: BookOpen
+        icon: BookOpen,
+        url: "https://store.makostars.com/collections/scholastic-success-workbooks"
       }, {
         title: "Roald Dahl Storybooks",
         description: "Classic tales for developing imagination",
-        icon: Sparkles
+        icon: Sparkles,
+        url: "https://store.makostars.com/collections/roald-dahl-books"
       }, {
         title: "Dr. Seuss Books",
         description: "Early reading fun with rhyme and rhythm",
-        icon: Globe
+        icon: Globe,
+        url: "https://store.makostars.com/collections/dr-seuss-books"
       }, {
         title: "Exam Prep Books",
         description: "AP, TOEFL, EIKEN, IELTS for ambitious learners",
-        icon: GraduationCap
+        icon: GraduationCap,
+        url: "https://store.makostars.com/collections/ap-exam-study-guides"
       }, {
         title: "National Geographic Kids",
         description: "Great for curious kids",
-        icon: Telescope
+        icon: Telescope,
+        url: "https://store.makostars.com/collections/national-geographic-kids"
       }]
     },
     ja: {
@@ -66,27 +72,33 @@ const Index = () => {
       categories: [{
         title: "Brain Quest & ワークブック",
         description: "小学生・中学生向けの楽しい学習教材",
-        icon: Brain
+        icon: Brain,
+        url: "https://store.makostars.com/collections/brain-quest-workbooks"
       }, {
         title: "Scholastic「Success With…」シリーズ",
         description: "読み書きと算数スキルを育てる",
-        icon: BookOpen
+        icon: BookOpen,
+        url: "https://store.makostars.com/collections/scholastic-success-workbooks"
       }, {
         title: "ロアルド・ダール ストーリーブック",
         description: "想像力を育む名作",
-        icon: Sparkles
+        icon: Sparkles,
+        url: "https://store.makostars.com/collections/roald-dahl-books"
       }, {
         title: "Dr. Seussの本",
         description: "韻とリズムで楽しく初めての読書",
-        icon: Globe
+        icon: Globe,
+        url: "https://store.makostars.com/collections/dr-seuss-books"
       }, {
         title: "試験対策本",
         description: "AP、TOEFL、英検、IELTS対策",
-        icon: GraduationCap
+        icon: GraduationCap,
+        url: "https://store.makostars.com/collections/ap-exam-study-guides"
       }, {
         title: "ナショナルジオグラフィック キッズ",
         description: "好奇心旺盛なお子様に最適",
-        icon: Telescope
+        icon: Telescope,
+        url: "https://store.makostars.com/collections/national-geographic-kids"
       }]
     }
   };
@@ -173,7 +185,7 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.categories.map((category, index) => {
             const Icon = category.icon;
-            return <Card key={index} className="p-6 hover:shadow-medium transition-all duration-300 hover:scale-105 cursor-pointer bg-gradient-card border-border" onClick={() => window.open("https://store.makostars.com", "_blank")}>
+            return <Card key={index} className="p-6 hover:shadow-medium transition-all duration-300 hover:scale-105 cursor-pointer bg-gradient-card border-border" onClick={() => window.open(category.url, "_blank")}>
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">

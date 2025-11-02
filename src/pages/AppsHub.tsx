@@ -17,7 +17,7 @@ import {
 
 export default function AppsHub() {
   const scrollToTools = () => {
-    document.getElementById('current-tools')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('coming-soon')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -55,66 +55,9 @@ export default function AppsHub() {
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      {/* Current Tools Section */}
-      <section id="current-tools" className="py-16 md:py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Available Now <Sparkles className="inline w-8 h-8 text-accent" />
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Start using these tools today to enhance your learning experience
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* QR Bookmark Card */}
-            <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <BookOpen className="w-6 h-6 text-accent" />
-                </div>
-                <CardTitle className="text-xl">QR Bookmark Landing Page</CardTitle>
-                <CardDescription>
-                  Connect with special events and reading programs using QR codes from our printed bookmarks.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button asChild className="w-full">
-                  <a href="/bookmark">
-                    Visit Page
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Book Fair Card */}
-            <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Calendar className="w-6 h-6 text-accent" />
-                </div>
-                <CardTitle className="text-xl">Book Fair 2025</CardTitle>
-                <CardDescription>
-                  Join our next in-person book fair featuring English books and learning materials.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button asChild className="w-full">
-                  <a href="/book-fair-2025">
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Coming Soon Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section id="coming-soon" className="py-16 md:py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

@@ -6,6 +6,20 @@ import { Label } from "@/components/ui/label";
 export const NewsletterForm = () => {
   useEffect(() => {
     // Zoho CRM validation and helper functions
+    (window as any).addAriaSelected37755000000330005 = function() {
+      const selectElem = event?.target as HTMLSelectElement;
+      if (!selectElem) return;
+      
+      const previousSelected = selectElem.querySelector('[aria-selected=true]');
+      if (previousSelected) {
+        previousSelected.removeAttribute('aria-selected');
+      }
+      const options = selectElem.querySelectorAll('option');
+      if (options[selectElem.selectedIndex]) {
+        options[selectElem.selectedIndex].setAttribute('aria-selected', 'true');
+      }
+    };
+
     (window as any).reloadImg37755000000330005 = function() {
       const captcha = document.getElementById('imgid37755000000330005') as HTMLImageElement;
       if (captcha && captcha.src.indexOf('&d') !== -1) {
@@ -108,12 +122,43 @@ export const NewsletterForm = () => {
         className="space-y-6"
       >
         {/* Hidden fields required by Zoho */}
-        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="64f617e8e312db8c8eec0ff3ca237b9207adc481c04f572c1b709bb42431392d" />
+        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="6747811f8d8d666c489133de6c6f755b1bb4bcd5e79b5aafd236d07cd3f18798" />
         <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-        <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="86878b2ec9ad180f13d0b084a977006fd3c690854b88294247a42aa845395417cfdb7e4f3cc38be229ac32087d9ccdb0" />
+        <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="f4f14345ab030e427889d003f52aa20c7ccc7ba2a4a9545d46a54c0ae045b42f47a26b70452b2d617129501fe739ee2c" />
         <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" />
         <input type="text" style={{ display: 'none' }} name="returnURL" value="null" />
         <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" />
+        
+        {/* Lead Source - Hidden field set to Bookmark Page */}
+        <select
+          style={{ display: 'none' }}
+          id="Lead_Source"
+          name="Lead Source"
+          aria-label="Lead Source"
+          onChange={(window as any).addAriaSelected37755000000330005}
+          defaultValue="Bookmark Page"
+        >
+          <option value="-None-">-None-</option>
+          <option value="Shopify Store">Shopify Store</option>
+          <option value="Bookmark Page">Bookmark Page</option>
+          <option value="Book Fair Page">Book Fair Page</option>
+          <option value="Advertisement">Advertisement</option>
+          <option value="Cold Call">Cold Call</option>
+          <option value="Employee Referral">Employee Referral</option>
+          <option value="External Referral">External Referral</option>
+          <option value="Online Store">Online Store</option>
+          <option value="Partner">Partner</option>
+          <option value="Public Relations">Public Relations</option>
+          <option value="Sales Email Alias">Sales Email Alias</option>
+          <option value="Seminar Partner">Seminar Partner</option>
+          <option value="Internal Seminar">Internal Seminar</option>
+          <option value="Trade Show">Trade Show</option>
+          <option value="Web Download">Web Download</option>
+          <option value="Web Research">Web Research</option>
+          <option value="Chat">Chat</option>
+          <option value="X (Twitter)">X (Twitter)</option>
+          <option value="Facebook">Facebook</option>
+        </select>
 
         {/* Last Name */}
         <div className="space-y-2">
@@ -197,7 +242,7 @@ export const NewsletterForm = () => {
           <div className="flex items-center gap-4 mt-3">
             <img
               id="imgid37755000000330005"
-              src="https://crm.zoho.jp/crm/CaptchaServlet?formId=86878b2ec9ad180f13d0b084a977006fd3c690854b88294247a42aa845395417cfdb7e4f3cc38be229ac32087d9ccdb0&grpid=64f617e8e312db8c8eec0ff3ca237b9207adc481c04f572c1b709bb42431392d"
+              src="https://crm.zoho.jp/crm/CaptchaServlet?formId=f4f14345ab030e427889d003f52aa20c7ccc7ba2a4a9545d46a54c0ae045b42f47a26b70452b2d617129501fe739ee2c&grpid=6747811f8d8d666c489133de6c6f755b1bb4bcd5e79b5aafd236d07cd3f18798"
               alt="Captcha"
               className="border rounded"
             />

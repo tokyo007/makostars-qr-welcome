@@ -166,7 +166,7 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
+      <section className="relative h-[59.5vh] min-h-[425px] overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Children reading books" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />

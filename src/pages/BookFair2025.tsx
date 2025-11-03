@@ -196,9 +196,10 @@ export default function BookFair2025() {
       },
       footer: {
         about: "About MakoStars",
-        aboutText: "We're passionate about inspiring children to love learning through quality English books and educational materials.",
+        aboutText: "MakoStars LLC was founded to promote a better understanding of the world through the knowledge and use of English.",
         quickLinks: "Quick Links",
         home: "Home",
+        bumbleB: "BumbleB English",
         bookmark: "Bookmark App",
         bookFair: "Book Fair 2025",
         legal: "Legal",
@@ -251,9 +252,10 @@ export default function BookFair2025() {
       },
       footer: {
         about: "MakoStarsについて",
-        aboutText: "質の高い英語の本と教育教材を通じて、子どもたちに学ぶことを好きになってもらうことに情熱を注いでいます。",
+        aboutText: "MakoStars合同会社は、英語の知識と使用を通じて、世界をより深く理解することを促進するために設立されました。",
         quickLinks: "クイックリンク",
         home: "ホーム",
+        bumbleB: "BumbleB English",
         bookmark: "ブックマークアプリ",
         bookFair: "ブックフェア 2025",
         legal: "法的情報",
@@ -583,8 +585,13 @@ export default function BookFair2025() {
               <h3 className="font-bold text-lg mb-4">{t.footer.quickLinks}</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-white/80 hover:text-white transition-colors text-sm">
+                  <a href="https://makostars.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm">
                     {t.footer.home}
+                  </a>
+                </li>
+                <li>
+                  <a href="https://bumblebenglish.jp" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm">
+                    {t.footer.bumbleB}
                   </a>
                 </li>
                 <li>

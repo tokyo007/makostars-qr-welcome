@@ -15,6 +15,12 @@ import {
 } from 'lucide-react';
 import paymentMethodsImage from '@/assets/payment-methods.png';
 import setaPayLogo from '@/assets/setapay-logo.png';
+import drSeussCollection from '@/assets/dr-seuss-collection.webp';
+import nationalGeoCollection from '@/assets/national-geographic-collection.webp';
+import brainQuestCollection from '@/assets/brain-quest-collection.webp';
+import scholasticCollection from '@/assets/scholastic-success-collection.webp';
+import bigFatNotebookCollection from '@/assets/big-fat-notebook-collection.webp';
+import roaldDahlCollection from '@/assets/roald-dahl-collection.webp';
 
 // Editable Configuration
 const eventDates = [
@@ -37,7 +43,7 @@ const featuredBooks = [
     nameEn: "Dr. Seuss", 
     nameJa: "ドクター・スース", 
     url: "https://store.makostars.com/collections/dr-seuss-books",
-    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/dr-seuss-books.jpg",
+    image: drSeussCollection,
     color: "bg-gradient-to-br from-red-400 to-pink-500"
   },
   { 
@@ -45,7 +51,7 @@ const featuredBooks = [
     nameEn: "National Geographic Kids", 
     nameJa: "ナショナルジオグラフィック", 
     url: "https://store.makostars.com/collections/national-geographic-kids",
-    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/national-geographic-kids.jpg",
+    image: nationalGeoCollection,
     color: "bg-gradient-to-br from-yellow-400 to-orange-500"
   },
   { 
@@ -53,7 +59,7 @@ const featuredBooks = [
     nameEn: "Brain Quest", 
     nameJa: "ブレインクエスト", 
     url: "https://store.makostars.com/collections/brain-quest-workbooks",
-    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/brain-quest-workbooks.jpg",
+    image: brainQuestCollection,
     color: "bg-gradient-to-br from-blue-400 to-indigo-500"
   },
   { 
@@ -61,7 +67,7 @@ const featuredBooks = [
     nameEn: "Scholastic Success", 
     nameJa: "スカラスティック", 
     url: "https://store.makostars.com/collections/scholastic-success-workbooks",
-    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/scholastic-success-workbooks.jpg",
+    image: scholasticCollection,
     color: "bg-gradient-to-br from-green-400 to-teal-500"
   },
   { 
@@ -69,7 +75,7 @@ const featuredBooks = [
     nameEn: "Big Fat Notebook", 
     nameJa: "ビッグ・ファット・ノート", 
     url: "https://store.makostars.com/collections/big-fat-notebook",
-    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/big-fat-notebook.jpg",
+    image: bigFatNotebookCollection,
     color: "bg-gradient-to-br from-purple-400 to-pink-500"
   },
   { 
@@ -77,7 +83,7 @@ const featuredBooks = [
     nameEn: "Roald Dahl", 
     nameJa: "ロアルド・ダール", 
     url: "https://store.makostars.com/collections/roald-dahl-books",
-    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/roald-dahl-books.jpg",
+    image: roaldDahlCollection,
     color: "bg-gradient-to-br from-amber-400 to-red-500"
   },
 ];

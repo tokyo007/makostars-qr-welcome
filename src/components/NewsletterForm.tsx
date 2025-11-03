@@ -122,11 +122,11 @@ export const NewsletterForm = () => {
         className="space-y-6"
       >
         {/* Hidden fields required by Zoho */}
-        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="6747811f8d8d666c489133de6c6f755b1bb4bcd5e79b5aafd236d07cd3f18798" />
+        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="de693e500770aac899ff9c34e02c6b8f490ce789f674ce5a49b89132aaf82976" />
         <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-        <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="f4f14345ab030e427889d003f52aa20c7ccc7ba2a4a9545d46a54c0ae045b42f47a26b70452b2d617129501fe739ee2c" />
+        <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="e528cbcd66935bb36eeaa2206bfd33baab06e64c619a08743e86f356af6aa03443a0800129bff462d5da07352504839c" />
         <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" />
-        <input type="text" style={{ display: 'none' }} name="returnURL" value="null" />
+        <input type="text" style={{ display: 'none' }} name="returnURL" value="https://apps.makostars.com/bookmark" />
         <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" />
         
         {/* Lead Source - Hidden field set to Bookmark Page */}
@@ -242,7 +242,7 @@ export const NewsletterForm = () => {
           <div className="flex items-center gap-4 mt-3">
             <img
               id="imgid37755000000330005"
-              src="https://crm.zoho.jp/crm/CaptchaServlet?formId=f4f14345ab030e427889d003f52aa20c7ccc7ba2a4a9545d46a54c0ae045b42f47a26b70452b2d617129501fe739ee2c&grpid=6747811f8d8d666c489133de6c6f755b1bb4bcd5e79b5aafd236d07cd3f18798"
+              src="https://crm.zoho.jp/crm/CaptchaServlet?formId=e528cbcd66935bb36eeaa2206bfd33baab06e64c619a08743e86f356af6aa03443a0800129bff462d5da07352504839c&grpid=de693e500770aac899ff9c34e02c6b8f490ce789f674ce5a49b89132aaf82976"
               alt="Captcha"
               className="border rounded"
             />

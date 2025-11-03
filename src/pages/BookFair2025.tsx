@@ -13,10 +13,14 @@ import {
   BookOpen, 
   ExternalLink,
   Sparkles,
-  Users
+  Users,
+  MessageCircle,
+  Download,
+  Car
 } from 'lucide-react';
 import { Countdown } from '@/components/Countdown';
 import { TrustBadges } from '@/components/TrustBadges';
+import { BookFairNewsletter } from '@/components/BookFairNewsletter';
 import paymentMethodsImage from '@/assets/payment-methods.png';
 import setaPayLogo from '@/assets/setapay-logo.png';
 import drSeussCollection from '@/assets/dr-seuss-collection.webp';
@@ -132,6 +136,7 @@ export default function BookFair2025() {
   const [language, setLanguage] = useState<"en" | "ja">("en");
   const mapSectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [showStickyHeader, setShowStickyHeader] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -144,15 +149,81 @@ export default function BookFair2025() {
       originalFavicon.href = '/book-fair-favicon.png';
     }
     
+    // Scroll tracking for sticky header
+    const handleScroll = () => {
+      setShowStickyHeader(window.scrollY > 300);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
     return () => {
       if (originalFavicon && originalHref) {
         originalFavicon.href = originalHref;
       }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const scrollToMap = () => {
     mapSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const generateICalendar = (date: string, time: string, dateJa: string) => {
+    // Parse date - assuming 2025 for the year
+    const monthMap: { [key: string]: number } = {
+      "Nov": 10, "Dec": 11, "11月": 10, "12月": 11
+    };
+    
+    const dateStr = language === "en" ? date : dateJa;
+    const parts = dateStr.match(/(\d+)/);
+    const day = parts ? parseInt(parts[1]) : 15;
+    const monthStr = dateStr.replace(/\d+/g, '').trim();
+    const month = monthMap[monthStr] || 10;
+    
+    // Parse time
+    const timeParts = time.split('-')[0].split(':');
+    const startHour = parseInt(timeParts[0]);
+    const startMinute = parseInt(timeParts[1]);
+    
+    const endParts = time.split('-')[1].split(':');
+    const endHour = parseInt(endParts[0]);
+    const endMinute = parseInt(endParts[1]);
+    
+    // Create date strings in ICS format (YYYYMMDDTHHMMSS)
+    const year = 2025;
+    const startDate = `${year}${String(month).padStart(2, '0')}${String(day).padStart(2, '0')}T${String(startHour).padStart(2, '0')}${String(startMinute).padStart(2, '0')}00`;
+    const endDate = `${year}${String(month).padStart(2, '0')}${String(day).padStart(2, '0')}T${String(endHour).padStart(2, '0')}${String(endMinute).padStart(2, '0')}00`;
+    
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MakoStars//Book Fair 2025//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:${startDate}
+DTEND;TZID=Asia/Tokyo:${endDate}
+SUMMARY:MakoStars Book Fair 2025
+DESCRIPTION:English-language books, picture books, workbooks, and study materials. Visit our store: https://store.makostars.com/collections/all
+LOCATION:BumbleB English Classroom, 世田谷区用賀 4-28-10
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT24H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: MakoStars Book Fair tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+
+    // Create blob and download
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `makostars-book-fair-${dateStr.replace(/\s+/g, '-')}.ics`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   const content = {
@@ -193,6 +264,27 @@ export default function BookFair2025() {
       map: {
         title: "Location & Access",
         subtitle: "Find us easily from Yoga Station"
+      },
+      stickyHeader: {
+        title: "Book Fair 2025",
+        viewBooks: "View Books"
+      },
+      floatingContact: {
+        tooltip: "Contact us on LINE"
+      },
+      mobileFooter: {
+        books: "Books",
+        line: "LINE",
+        map: "Map"
+      },
+      addToCalendar: "Add to Calendar",
+      parking: {
+        title: "Parking & Access",
+        noParking: "Parking is not available at the classroom",
+        usePaid: "Please use nearby paid parking areas",
+        publicTransport: "Accessible via public transportation (5 min walk from Yoga Station North Exit)",
+        wheelchair: "Not wheelchair accessible",
+        stroller: "Strollers must be left outside"
       },
       footer: {
         about: "About MakoStars",
@@ -249,6 +341,27 @@ export default function BookFair2025() {
         title: "場所・アクセス",
         subtitle: "用賀駅から簡単にお越しいただけます"
       },
+      stickyHeader: {
+        title: "ブックフェア 2025",
+        viewBooks: "本を見る"
+      },
+      floatingContact: {
+        tooltip: "LINEでお問い合わせ"
+      },
+      mobileFooter: {
+        books: "本",
+        line: "LINE",
+        map: "地図"
+      },
+      addToCalendar: "カレンダーに追加",
+      parking: {
+        title: "駐車場・アクセス情報",
+        noParking: "教室には駐車場がございません",
+        usePaid: "近隣の有料駐車場をご利用ください",
+        publicTransport: "公共交通機関でアクセス可能（用賀駅北口より徒歩5分）",
+        wheelchair: "車椅子でのアクセスは不可",
+        stroller: "ベビーカーは外に置いてください"
+      },
       footer: {
         about: "MakoStarsについて",
         aboutText: "MakoStars合同会社は、英語の知識と使用を通じて、世界をより深く理解することを促進するために設立されました。",
@@ -280,6 +393,26 @@ export default function BookFair2025() {
       >
         <Languages className="w-5 h-5 text-primary" />
       </button>
+
+      {/* Sticky Header */}
+      {showStickyHeader && (
+        <div className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-40 animate-fade-in">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <BookOpen className="w-6 h-6 text-primary" />
+              <span className="font-bold text-lg text-foreground">
+                {t.stickyHeader.title}
+              </span>
+            </div>
+            <Button size="sm" asChild>
+              <a href="https://store.makostars.com/collections/all" target="_blank" rel="noopener noreferrer">
+                {t.stickyHeader.viewBooks}
+                <ExternalLink className="ml-2 w-4 h-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-white overflow-hidden">
@@ -313,17 +446,29 @@ export default function BookFair2025() {
                 key={idx} 
                 className="bg-white text-foreground rounded-xl px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-8 h-8 text-primary" />
-                  <div className="text-left">
-                    <div className="font-semibold text-2xl">
-                      {language === "en" ? event.date : event.dateJa}
-                    </div>
-                    <div className="flex items-center gap-2 text-lg text-muted-foreground">
-                      <Clock className="w-5 h-5" />
-                      {language === "en" ? event.time : event.timeJa}
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <div className="flex items-center gap-3 flex-1">
+                    <Calendar className="w-8 h-8 text-primary flex-shrink-0" />
+                    <div className="text-left">
+                      <div className="font-semibold text-2xl">
+                        {language === "en" ? event.date : event.dateJa}
+                      </div>
+                      <div className="flex items-center gap-2 text-lg text-muted-foreground">
+                        <Clock className="w-5 h-5" />
+                        {language === "en" ? event.time : event.timeJa}
+                      </div>
                     </div>
                   </div>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => generateICalendar(event.date, event.time, event.dateJa)}
+                    title={t.addToCalendar}
+                    className="flex-shrink-0"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    <span className="hidden sm:inline">{t.addToCalendar}</span>
+                  </Button>
                 </div>
               </div>
             ))}
@@ -526,6 +671,48 @@ export default function BookFair2025() {
         </div>
       </section>
 
+      {/* Parking & Accessibility Section */}
+      <section className="py-12 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="border-2 shadow-xl hover:shadow-2xl transition-shadow">
+            <CardContent className="pt-6">
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                  <Car className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-4 text-foreground">
+                    {t.parking.title}
+                  </h3>
+                  <div className="space-y-3 text-muted-foreground">
+                    <div className="flex items-start gap-2">
+                      <span className="text-destructive font-semibold text-lg flex-shrink-0">⚠️</span>
+                      <p className="font-medium text-foreground">{t.parking.noParking}</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-lg flex-shrink-0">🅿️</span>
+                      <p>{t.parking.usePaid}</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-lg flex-shrink-0">🚇</span>
+                      <p>{t.parking.publicTransport}</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-lg flex-shrink-0">♿</span>
+                      <p>{t.parking.wheelchair}</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-lg flex-shrink-0">🚼</span>
+                      <p>{t.parking.stroller}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Map Section */}
       <section ref={mapSectionRef} className="py-16 sm:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -565,6 +752,9 @@ export default function BookFair2025() {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Section */}
+      <BookFairNewsletter language={language} />
 
       {/* Footer */}
       <footer className="bg-[#1a2847] text-white py-12 sm:py-16">
@@ -659,6 +849,51 @@ export default function BookFair2025() {
           </div>
         </div>
       </footer>
+
+      {/* Floating LINE Contact Button */}
+      <a
+        href="https://lin.ee/sh7cSdd"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-[#00B900] hover:bg-[#00A000] text-white p-4 rounded-full shadow-2xl z-40 animate-pulse hover:animate-none transition-all hover:scale-110 group"
+        title={t.floatingContact.tooltip}
+      >
+        <MessageCircle className="w-6 h-6" />
+        <span className="absolute -top-12 right-0 bg-gray-900 text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          {t.floatingContact.tooltip}
+        </span>
+      </a>
+
+      {/* Mobile Sticky Footer */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-30 safe-area-inset-bottom">
+        <div className="grid grid-cols-3 divide-x">
+          <a
+            href="https://store.makostars.com/collections/all"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center justify-center py-3 hover:bg-muted/50 transition-colors active:bg-muted"
+          >
+            <BookOpen className="w-5 h-5 text-primary mb-1" />
+            <span className="text-xs font-medium">{t.mobileFooter.books}</span>
+          </a>
+          <a
+            href="https://lin.ee/sh7cSdd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center justify-center py-3 hover:bg-muted/50 transition-colors active:bg-muted"
+          >
+            <MessageCircle className="w-5 h-5 text-[#00B900] mb-1" />
+            <span className="text-xs font-medium">{t.mobileFooter.line}</span>
+          </a>
+          <button
+            onClick={scrollToMap}
+            className="flex flex-col items-center justify-center py-3 hover:bg-muted/50 transition-colors active:bg-muted"
+          >
+            <MapPin className="w-5 h-5 text-primary mb-1" />
+            <span className="text-xs font-medium">{t.mobileFooter.map}</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

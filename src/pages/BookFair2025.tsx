@@ -95,6 +95,20 @@ export default function BookFair2025() {
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // Update favicon for this page
+    const originalFavicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+    const originalHref = originalFavicon?.href;
+    
+    if (originalFavicon) {
+      originalFavicon.href = '/book-fair-favicon.png';
+    }
+    
+    return () => {
+      if (originalFavicon && originalHref) {
+        originalFavicon.href = originalHref;
+      }
+    };
   }, []);
 
   const scrollToMap = () => {

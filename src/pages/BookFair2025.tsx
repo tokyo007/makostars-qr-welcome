@@ -200,8 +200,7 @@ export default function BookFair2025() {
         quickLinks: "Quick Links",
         home: "Home",
         bumbleB: "BumbleB English",
-        bookmark: "Bookmark App",
-        bookFair: "Book Fair 2025",
+        bookFair: "Book Fair",
         legal: "Legal",
         privacy: "Privacy Policy",
         terms: "Terms of Service",
@@ -256,8 +255,7 @@ export default function BookFair2025() {
         quickLinks: "クイックリンク",
         home: "ホーム",
         bumbleB: "BumbleB English",
-        bookmark: "ブックマークアプリ",
-        bookFair: "ブックフェア 2025",
+        bookFair: "ブックフェア",
         legal: "法的情報",
         privacy: "プライバシーポリシー",
         terms: "利用規約",
@@ -592,11 +590,6 @@ export default function BookFair2025() {
                 <li>
                   <a href="https://bumblebenglish.jp" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm">
                     {t.footer.bumbleB}
-                  </a>
-                </li>
-                <li>
-                  <a href="/bookmark" className="text-white/80 hover:text-white transition-colors text-sm">
-                    {t.footer.bookmark}
                   </a>
                 </li>
                 <li>

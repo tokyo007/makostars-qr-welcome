@@ -16,7 +16,8 @@ import {
   Users,
   MessageCircle,
   Download,
-  Car
+  Car,
+  Instagram
 } from 'lucide-react';
 import { Countdown } from '@/components/Countdown';
 import { TrustBadges } from '@/components/TrustBadges';
@@ -783,7 +784,7 @@ END:VCALENDAR`;
                   </a>
                 </li>
                 <li>
-                  <a href="/book-fair-2025" className="text-white/80 hover:text-white transition-colors text-sm">
+                  <a href="https://apps.makostars.com/book-fair-2025" className="text-white/80 hover:text-white transition-colors text-sm">
                     {t.footer.bookFair}
                   </a>
                 </li>
@@ -795,12 +796,12 @@ END:VCALENDAR`;
               <h3 className="font-bold text-lg mb-4">{t.footer.legal}</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-white/80 hover:text-white transition-colors text-sm">
+                  <a href="https://makostars.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm">
                     {t.footer.privacy}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-white/80 hover:text-white transition-colors text-sm">
+                  <a href="https://makostars.com/terms-and-conditions/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm">
                     {t.footer.terms}
                   </a>
                 </li>
@@ -832,8 +833,9 @@ END:VCALENDAR`;
                     href="https://www.instagram.com/makostars/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-1"
+                    className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
                   >
+                    <Instagram className="w-4 h-4" />
                     {t.footer.instagram}
                     <ExternalLink className="w-3 h-3" />
                   </a>

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { 
   MapPin, 
   CreditCard, 
@@ -11,8 +12,11 @@ import {
   Languages, 
   BookOpen, 
   ExternalLink,
-  Sparkles
+  Sparkles,
+  Users
 } from 'lucide-react';
+import { Countdown } from '@/components/Countdown';
+import { TrustBadges } from '@/components/TrustBadges';
 import paymentMethodsImage from '@/assets/payment-methods.png';
 import setaPayLogo from '@/assets/setapay-logo.png';
 import drSeussCollection from '@/assets/dr-seuss-collection.webp';
@@ -44,7 +48,13 @@ const featuredBooks = [
     nameJa: "ドクター・スース", 
     url: "https://store.makostars.com/collections/dr-seuss-books",
     image: drSeussCollection,
-    color: "bg-gradient-to-br from-red-400 to-pink-500"
+    color: "bg-gradient-to-br from-red-400 to-pink-500",
+    badge: "POPULAR",
+    badgeJa: "人気",
+    bookCount: "50+",
+    ageRange: "3-8",
+    ageRangeJa: "3-8歳",
+    priceRange: "¥800-2,500"
   },
   { 
     id: 2, 
@@ -52,7 +62,13 @@ const featuredBooks = [
     nameJa: "ナショナルジオグラフィック", 
     url: "https://store.makostars.com/collections/national-geographic-kids",
     image: nationalGeoCollection,
-    color: "bg-gradient-to-br from-yellow-400 to-orange-500"
+    color: "bg-gradient-to-br from-yellow-400 to-orange-500",
+    badge: "NEW",
+    badgeJa: "新着",
+    bookCount: "40+",
+    ageRange: "6-12",
+    ageRangeJa: "6-12歳",
+    priceRange: "¥1,200-3,000"
   },
   { 
     id: 3, 
@@ -60,7 +76,13 @@ const featuredBooks = [
     nameJa: "ブレインクエスト", 
     url: "https://store.makostars.com/collections/brain-quest-workbooks",
     image: brainQuestCollection,
-    color: "bg-gradient-to-br from-blue-400 to-indigo-500"
+    color: "bg-gradient-to-br from-blue-400 to-indigo-500",
+    badge: "POPULAR",
+    badgeJa: "人気",
+    bookCount: "35+",
+    ageRange: "4-12",
+    ageRangeJa: "4-12歳",
+    priceRange: "¥1,000-2,800"
   },
   { 
     id: 4, 
@@ -68,7 +90,13 @@ const featuredBooks = [
     nameJa: "スカラスティック", 
     url: "https://store.makostars.com/collections/scholastic-success-workbooks",
     image: scholasticCollection,
-    color: "bg-gradient-to-br from-green-400 to-teal-500"
+    color: "bg-gradient-to-br from-green-400 to-teal-500",
+    badge: null,
+    badgeJa: null,
+    bookCount: "45+",
+    ageRange: "5-10",
+    ageRangeJa: "5-10歳",
+    priceRange: "¥900-2,200"
   },
   { 
     id: 5, 
@@ -76,7 +104,13 @@ const featuredBooks = [
     nameJa: "ビッグ・ファット・ノート", 
     url: "https://store.makostars.com/collections/big-fat-notebook",
     image: bigFatNotebookCollection,
-    color: "bg-gradient-to-br from-purple-400 to-pink-500"
+    color: "bg-gradient-to-br from-purple-400 to-pink-500",
+    badge: "NEW",
+    badgeJa: "新着",
+    bookCount: "15+",
+    ageRange: "10-16",
+    ageRangeJa: "10-16歳",
+    priceRange: "¥2,500-3,800"
   },
   { 
     id: 6, 
@@ -84,7 +118,13 @@ const featuredBooks = [
     nameJa: "ロアルド・ダール", 
     url: "https://store.makostars.com/collections/roald-dahl-books",
     image: roaldDahlCollection,
-    color: "bg-gradient-to-br from-amber-400 to-red-500"
+    color: "bg-gradient-to-br from-amber-400 to-red-500",
+    badge: "POPULAR",
+    badgeJa: "人気",
+    bookCount: "30+",
+    ageRange: "8-14",
+    ageRangeJa: "8-14歳",
+    priceRange: "¥1,500-3,200"
   },
 ];
 
@@ -243,7 +283,8 @@ export default function BookFair2025() {
 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/src/assets/hero-books.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/src/assets/hero-books.jpg')] bg-cover bg-center opacity-25"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-accent/10 to-primary/90 animate-gradient"></div>
         <div className={`relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 tracking-tight">
             {t.hero.title}
@@ -255,12 +296,15 @@ export default function BookFair2025() {
             {t.hero.subtitleJa}
           </p>
           
-          <div className="flex items-center justify-center gap-2 mb-12 text-yellow-300">
+          <div className="flex items-center justify-center gap-2 mb-8 text-yellow-300">
             <Sparkles className="w-6 h-6" />
             <p className="text-lg sm:text-xl font-medium">
               {t.hero.outlet}
             </p>
           </div>
+
+          {/* Countdown Timer */}
+          <Countdown targetDate="2025-11-15T11:00:00" language={language} />
 
           {/* Event Dates */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -289,7 +333,7 @@ export default function BookFair2025() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse"
               asChild
             >
               <a href="https://store.makostars.com/collections/all" target="_blank" rel="noopener noreferrer">
@@ -310,6 +354,9 @@ export default function BookFair2025() {
         </div>
       </section>
 
+      {/* Trust & Social Proof Section */}
+      <TrustBadges language={language} />
+
       {/* Featured Books Section */}
       <section className="py-16 sm:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -322,7 +369,7 @@ export default function BookFair2025() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredBooks.map((book) => (
               <a
                 key={book.id}
@@ -331,31 +378,54 @@ export default function BookFair2025() {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <Card className="h-full overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105">
+                <Card className="h-full overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:scale-105">
                   <CardContent className="p-0">
-                    <div className="aspect-square bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                      {book.badge && (
+                        <Badge className="absolute top-3 right-3 z-10 bg-accent text-accent-foreground font-bold">
+                          {language === "en" ? book.badge : book.badgeJa}
+                        </Badge>
+                      )}
                       <img 
                         src={book.image} 
                         alt={language === "en" ? book.nameEn : book.nameJa}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                           const parent = e.currentTarget.parentElement;
                           if (parent) {
-                            parent.className = `${book.color} aspect-square flex items-center justify-center relative overflow-hidden`;
+                            parent.className = `${book.color} aspect-[4/3] flex items-center justify-center relative overflow-hidden`;
                             const icon = document.createElement('div');
-                            icon.innerHTML = '<svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>';
+                            icon.innerHTML = '<svg class="w-20 h-20 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>';
                             parent.appendChild(icon.firstChild!);
                           }
                         }}
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                        <div className="text-white text-center px-4">
+                          <div className="flex items-center justify-center gap-4 mb-2">
+                            <div className="flex items-center gap-1">
+                              <BookOpen className="w-4 h-4" />
+                              <span className="text-sm font-medium">{book.bookCount}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Users className="w-4 h-4" />
+                              <span className="text-sm font-medium">{language === "en" ? book.ageRange : book.ageRangeJa}</span>
+                            </div>
+                          </div>
+                          <div className="text-sm font-semibold">{book.priceRange}</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="p-4 text-center">
-                      <h3 className="font-semibold text-sm sm:text-base mb-1 group-hover:text-primary transition-colors">
+                    <div className="p-5 text-center">
+                      <h3 className="font-semibold text-base sm:text-lg mb-2 group-hover:text-primary transition-colors">
                         {language === "en" ? book.nameEn : book.nameJa}
                       </h3>
-                      <ExternalLink className="w-4 h-4 mx-auto text-muted-foreground group-hover:text-primary transition-colors" />
+                      <div className="flex items-center justify-center gap-2 text-muted-foreground group-hover:text-primary transition-colors">
+                        <span className="text-sm">{language === "en" ? "View Collection" : "コレクションを見る"}</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

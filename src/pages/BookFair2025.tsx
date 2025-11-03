@@ -32,7 +32,7 @@ const eventDates = [
 const locationInfo = {
   name: "BumbleB English Classroom",
   address: "世田谷区用賀 4-28-10",
-  mapUrl: "https://maps.app.goo.gl/TH6P9eMwKTUu7GPv6",
+  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.934552030549!2d139.62949984130108!3d35.62933993293488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f5686bfd38d1%3A0x77db038d52ed0a6d!2sBumbleB%20English!5e0!3m2!1sen!2sjp!4v1762134956569!5m2!1sen!2sjp",
   accessEn: "5 min walk from Yoga Station North Exit",
   accessJa: "用賀駅北口より徒歩5分"
 };

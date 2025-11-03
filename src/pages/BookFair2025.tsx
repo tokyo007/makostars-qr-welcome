@@ -14,6 +14,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import paymentMethodsImage from '@/assets/payment-methods.png';
+import setaPayLogo from '@/assets/setapay-logo.png';
 
 // Editable Configuration
 const eventDates = [
@@ -380,6 +381,13 @@ export default function BookFair2025() {
                       src={paymentMethodsImage} 
                       alt="Accepted payment methods including Visa, Mastercard, JCB, American Express, and e-money options" 
                       className="max-w-full h-auto rounded-lg"
+                    />
+                  </div>
+                  <div className="flex items-center justify-center pb-2">
+                    <img 
+                      src={setaPayLogo} 
+                      alt="SetaPay - Setagaya Ward local payment system" 
+                      className="h-12 w-auto"
                     />
                   </div>
                   <div className="text-center">

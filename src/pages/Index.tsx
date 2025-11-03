@@ -189,7 +189,7 @@ const Index = () => {
       </section>
 
       {/* Special Message Section */}
-      <section ref={specialSectionRef} className="py-16 sm:py-24 bg-secondary/50">
+      <section ref={specialSectionRef} className="pt-14 pb-16 sm:pt-20 sm:pb-24 bg-secondary/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block p-3 bg-accent/20 rounded-full mb-6">
             <BookOpen className="w-12 h-12 text-accent" />

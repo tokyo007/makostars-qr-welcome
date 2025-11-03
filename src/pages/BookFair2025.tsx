@@ -10,7 +10,8 @@ import {
   Clock, 
   Languages, 
   BookOpen, 
-  ExternalLink 
+  ExternalLink,
+  Sparkles
 } from 'lucide-react';
 
 // Editable Configuration
@@ -21,9 +22,9 @@ const eventDates = [
 ];
 
 const locationInfo = {
-  name: "BumbleB English",
+  name: "BumbleB English Classroom",
   address: "世田谷区用賀 4-28-10",
-  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.8688889!2d139.6366!3d35.6265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDM3JzM1LjQiTiAxMznCsDM4JzExLjgiRQ!5e0!3m2!1sen!2sjp!4v1234567890",
+  mapUrl: "https://maps.app.goo.gl/TH6P9eMwKTUu7GPv6",
   accessEn: "5 min walk from Yoga Station North Exit",
   accessJa: "用賀駅北口より徒歩5分"
 };
@@ -34,6 +35,7 @@ const featuredBooks = [
     nameEn: "Dr. Seuss", 
     nameJa: "ドクター・スース", 
     url: "https://store.makostars.com/collections/dr-seuss-books",
+    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/dr-seuss-books.jpg",
     color: "bg-gradient-to-br from-red-400 to-pink-500"
   },
   { 
@@ -41,6 +43,7 @@ const featuredBooks = [
     nameEn: "National Geographic Kids", 
     nameJa: "ナショナルジオグラフィック", 
     url: "https://store.makostars.com/collections/national-geographic-kids",
+    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/national-geographic-kids.jpg",
     color: "bg-gradient-to-br from-yellow-400 to-orange-500"
   },
   { 
@@ -48,6 +51,7 @@ const featuredBooks = [
     nameEn: "Brain Quest", 
     nameJa: "ブレインクエスト", 
     url: "https://store.makostars.com/collections/brain-quest-workbooks",
+    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/brain-quest-workbooks.jpg",
     color: "bg-gradient-to-br from-blue-400 to-indigo-500"
   },
   { 
@@ -55,6 +59,7 @@ const featuredBooks = [
     nameEn: "Scholastic Success", 
     nameJa: "スカラスティック", 
     url: "https://store.makostars.com/collections/scholastic-success-workbooks",
+    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/scholastic-success-workbooks.jpg",
     color: "bg-gradient-to-br from-green-400 to-teal-500"
   },
   { 
@@ -62,6 +67,7 @@ const featuredBooks = [
     nameEn: "Big Fat Notebook", 
     nameJa: "ビッグ・ファット・ノート", 
     url: "https://store.makostars.com/collections/big-fat-notebook",
+    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/big-fat-notebook.jpg",
     color: "bg-gradient-to-br from-purple-400 to-pink-500"
   },
   { 
@@ -69,6 +75,7 @@ const featuredBooks = [
     nameEn: "Roald Dahl", 
     nameJa: "ロアルド・ダール", 
     url: "https://store.makostars.com/collections/roald-dahl-books",
+    image: "https://cdn.shopify.com/s/files/1/0589/4499/4595/collections/roald-dahl-books.jpg",
     color: "bg-gradient-to-br from-amber-400 to-red-500"
   },
 ];
@@ -92,6 +99,7 @@ export default function BookFair2025() {
         title: "MakoStars Book Fair",
         subtitle: "English-language books, picture books, workbooks, and study materials",
         subtitleJa: "英語の絵本・ワークブック・学習教材",
+        outlet: "Outlet items and New Arrival items will also be available",
         viewBooks: "View Books",
         mapAccess: "Map & Access"
       },
@@ -103,7 +111,7 @@ export default function BookFair2025() {
         title: "Event Information",
         location: {
           title: "Location",
-          text: "BumbleB English classroom",
+          text: "BumbleB English Classroom",
           address: "世田谷区用賀 4-28-10",
           access: "5 min walk from Yoga Station North Exit"
         },
@@ -112,7 +120,7 @@ export default function BookFair2025() {
           text: "Credit Card / SetaPay / Cash"
         },
         shipping: {
-          title: "Shipping Available",
+          title: "Shipping is Available",
           text: "Available (+400 JPY)"
         },
         contact: {
@@ -146,6 +154,7 @@ export default function BookFair2025() {
         title: "MakoStars Book Fair",
         subtitle: "英語の絵本・ワークブック・学習教材",
         subtitleJa: "English-language books, picture books, workbooks, and study materials",
+        outlet: "アウトレット商品と新着商品もご用意しています",
         viewBooks: "本を見る",
         mapAccess: "地図・アクセス"
       },
@@ -157,7 +166,7 @@ export default function BookFair2025() {
         title: "イベント情報",
         location: {
           title: "場所",
-          text: "BumbleB English 教室",
+          text: "BumbleB English Classroom",
           address: "世田谷区用賀 4-28-10",
           access: "用賀駅北口より徒歩5分"
         },
@@ -166,7 +175,7 @@ export default function BookFair2025() {
           text: "クレジットカード / セタペイ / 現金"
         },
         shipping: {
-          title: "配送可能",
+          title: "配送サービスをご利用いただけます",
           text: "配送可能（+400円）"
         },
         contact: {
@@ -220,25 +229,32 @@ export default function BookFair2025() {
           <p className="text-lg sm:text-xl lg:text-2xl mb-4 max-w-3xl mx-auto font-light">
             {t.hero.subtitle}
           </p>
-          <p className={`text-base sm:text-lg lg:text-xl mb-12 max-w-3xl mx-auto font-light ${language === "en" ? "font-noto-sans-jp" : ""}`}>
+          <p className={`text-base sm:text-lg lg:text-xl mb-4 max-w-3xl mx-auto font-light ${language === "en" ? "font-noto-sans-jp" : ""}`}>
             {t.hero.subtitleJa}
           </p>
+          
+          <div className="flex items-center justify-center gap-2 mb-12 text-yellow-300">
+            <Sparkles className="w-6 h-6" />
+            <p className="text-lg sm:text-xl font-medium">
+              {t.hero.outlet}
+            </p>
+          </div>
 
           {/* Event Dates */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {eventDates.map((event, idx) => (
               <div 
                 key={idx} 
-                className="bg-white text-foreground rounded-xl px-6 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="bg-white text-foreground rounded-xl px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-primary" />
+                  <Calendar className="w-8 h-8 text-primary" />
                   <div className="text-left">
-                    <div className="font-semibold text-sm">
+                    <div className="font-semibold text-2xl">
                       {language === "en" ? event.date : event.dateJa}
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Clock className="w-3 h-3" />
+                    <div className="flex items-center gap-2 text-lg text-muted-foreground">
+                      <Clock className="w-5 h-5" />
                       {language === "en" ? event.time : event.timeJa}
                     </div>
                   </div>
@@ -295,8 +311,22 @@ export default function BookFair2025() {
               >
                 <Card className="h-full overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105">
                   <CardContent className="p-0">
-                    <div className={`${book.color} aspect-square flex items-center justify-center relative overflow-hidden`}>
-                      <BookOpen className="w-16 h-16 text-white/90 group-hover:scale-110 transition-transform duration-300" />
+                    <div className="aspect-square bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                      <img 
+                        src={book.image} 
+                        alt={language === "en" ? book.nameEn : book.nameJa}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          const parent = e.currentTarget.parentElement;
+                          if (parent) {
+                            parent.className = `${book.color} aspect-square flex items-center justify-center relative overflow-hidden`;
+                            const icon = document.createElement('div');
+                            icon.innerHTML = '<svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>';
+                            parent.appendChild(icon.firstChild!);
+                          }
+                        }}
+                      />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                     </div>
                     <div className="p-4 text-center">
@@ -343,11 +373,34 @@ export default function BookFair2025() {
             {/* Payment */}
             <Card className="hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-accent/10 p-3 rounded-lg">
-                    <CreditCard className="w-6 h-6 text-accent" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center justify-center gap-3 flex-wrap">
+                    {/* Visa */}
+                    <svg className="h-8" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="48" height="32" rx="4" fill="#1434CB"/>
+                      <path d="M19.8 22.3L22.1 9.7H25.3L23 22.3H19.8ZM35.7 10C35.1 9.8 34.2 9.5 33 9.5C29.8 9.5 27.5 11.2 27.5 13.6C27.5 15.4 29.1 16.4 30.3 17C31.6 17.6 32 18 32 18.6C32 19.5 30.9 19.9 29.9 19.9C28.5 19.9 27.8 19.7 26.6 19.2L26.1 19L25.6 21.9C26.3 22.2 27.6 22.5 29 22.5C32.4 22.5 34.7 20.8 34.7 18.3C34.7 17 33.9 16 32.2 15.2C31 14.7 30.3 14.3 30.3 13.7C30.3 13.2 30.9 12.6 32.2 12.6C33.2 12.6 33.9 12.8 34.5 13L34.8 13.1L35.3 10.2L35.7 10ZM39.8 9.7H37.4C36.6 9.7 36 9.9 35.6 10.7L30.8 22.3H34.2L34.9 20.4H39.1L39.5 22.3H42.5L39.8 9.7ZM36.8 17.8L38.2 13.6L38.9 17.8H36.8ZM17.5 9.7L14.3 18.7L14 17.3C13.4 15.3 11.6 13.1 9.5 12L12.4 22.3H15.8L20.9 9.7H17.5Z" fill="white"/>
+                    </svg>
+                    
+                    {/* Mastercard */}
+                    <svg className="h-8" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="48" height="32" rx="4" fill="#252525"/>
+                      <circle cx="18" cy="16" r="8" fill="#EB001B"/>
+                      <circle cx="30" cy="16" r="8" fill="#FF5F00"/>
+                      <path d="M24 9.5C22.5 10.7 21.5 12.7 21.5 15C21.5 17.3 22.5 19.3 24 20.5C25.5 19.3 26.5 17.3 26.5 15C26.5 12.7 25.5 10.7 24 9.5Z" fill="#F79E1B"/>
+                    </svg>
+                    
+                    {/* American Express */}
+                    <svg className="h-8" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="48" height="32" rx="4" fill="#006FCF"/>
+                      <path d="M9 12H11.5L12.5 14.2L13.5 12H16V18H14.5V14.2L13.3 16.5H11.7L10.5 14.2V18H9V12ZM17 12H21V13.5H18.5V14.5H21V16H18.5V16.5H21V18H17V12ZM22.5 12L23.5 14.2L24.5 12H27V18H25.5V14.5L24.3 16.8H22.7L21.5 14.5V18H20V12H22.5ZM28 12H31.5C32.3 12 33 12.7 33 13.5V14.5C33 15.3 32.3 16 31.5 16H29.5V18H28V12ZM29.5 13.5V14.5H31.5V13.5H29.5Z" fill="white"/>
+                    </svg>
+                    
+                    {/* SetaPay */}
+                    <div className="px-3 py-1 bg-gradient-to-r from-green-500 to-blue-500 rounded text-white font-bold text-sm">
+                      せたPay
+                    </div>
                   </div>
-                  <div className="flex-1">
+                  <div className="text-center">
                     <h3 className="font-semibold text-lg mb-2">{t.eventInfo.payment.title}</h3>
                     <p className="text-muted-foreground">{t.eventInfo.payment.text}</p>
                   </div>

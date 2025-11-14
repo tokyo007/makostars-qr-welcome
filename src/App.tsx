@@ -8,6 +8,7 @@ import AppsHub from "./pages/AppsHub";
 import Bookmark from "./pages/Bookmark";
 import BookFair2025 from "./pages/BookFair2025";
 import NotFound from "./pages/NotFound";
+import { RouteTracker } from "@/components/RouteTracker";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <RouteTracker />
         <Routes>
           <Route path="/" element={<AppsHub />} />
           <Route path="/bookmark" element={<Bookmark />} />

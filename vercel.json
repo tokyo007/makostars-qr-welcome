@@ -4,10 +4,14 @@
       "source": "/book-fair-2025",
       "destination": "https://pages.makostars.com/book-fair-2025/",
       "permanent": true
+    },
+    {
+      "source": "/bookmark",
+      "destination": "https://pages.makostars.com/bookmark/",
+      "permanent": true
     }
   ],
   "rewrites": [
-    { "source": "/bookmark", "destination": "/index.html" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
